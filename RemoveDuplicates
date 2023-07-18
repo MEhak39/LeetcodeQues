@@ -1,0 +1,21 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        
+        int j = 1; // Next position to write unique element
+        int k = nums.length;
+        int i = 0; // Current position to check
+        
+        while (i < k - 1) { // i should go up to the second last element
+if (numbers[i]!= number[i + 1]) {
+                nums[j] = nums[i + 1];
+                j++;
+            }
+            i++;
+        }
+        
+        return j;
+    }
+}
