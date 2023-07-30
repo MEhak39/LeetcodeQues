@@ -1,0 +1,23 @@
+class Solution {
+    public String reverseVowels(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        int x = 0;
+        int y = sb.length() - 1;
+        while (x < y) {
+            char charX = sb.charAt(x);
+            char charY = sb.charAt(y);
+
+            if ((charX == 'a' || charX == 'e' || charX == 'i' || charX == 'o' || charX == 'u'|| charX == 'A' || charX == 'E' || charX == 'I' || charX == 'O' || charX == 'U') && (charY == 'a' || charY == 'e' || charY == 'i' || charY == 'o' || charY == 'u' || charY == 'A' || charY == 'E' || charY == 'I' || charY == 'O' || charY == 'U' )) {
+                sb.setCharAt(x, charY);
+                sb.setCharAt(y, charX);
+                x++;
+                y--;
+            } else if ((charX == 'a' || charX == 'e' || charX == 'i' || charX == 'o' || charX == 'u' || charX == 'A' || charX == 'E' || charX == 'I' || charX == 'O' || charX == 'U')) {
+                y--;
+            } else {
+                x++;
+            }
+        }
+        return sb.toString(); // Convert StringBuilder to String and return
+    }
+}
