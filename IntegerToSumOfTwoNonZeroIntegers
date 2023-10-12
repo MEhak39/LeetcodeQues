@@ -1,0 +1,21 @@
+import java.util.Random;
+
+class Solution {
+    
+    public int[] getNoZeroIntegers(int n) {
+        Random rand = new Random();
+        
+        int a, b;
+        do {
+            a = rand.nextInt(n - 1) + 1;  // Generate a random non-zero integer a (1 <= a <= n-1)
+            b = n - a;  // Calculate b such that a + b = n
+        } while (containsZero(a) || containsZero(b));  // Repeat if either a or b contains a zero
+        
+        return new int[]{a, b};
+    }
+
+    private boolean containsZero(int num) {
+        // Check if the decimal representation of num contains zero
+        return String.valueOf(num).contains("0");
+    }
+}
